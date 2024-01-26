@@ -3,7 +3,7 @@ const dotenv=require('dotenv')
 
 
 
-module.exports = async (from, email, subject, text, date, customer,information,price, advanced, medium,) => {
+module.exports = async (from, email, subject, text, date, customer,sewing, alterations, price, advanced, medium,) => {
 	try {
 		const transporter = nodemailer.createTransport({
 			host: process.env.EMAIL_HOST,
@@ -84,7 +84,8 @@ module.exports = async (from, email, subject, text, date, customer,information,p
 				<tbody>
 				  <tr>
 					<td>${customer}</td>
-					<td>${information}</td>
+					<td>${sewing}</td>
+					<td>${alterations}</td>
 					<td>${price}</td>
 					<td>${advanced}</td>
 					<td>${medium}</td>
@@ -92,7 +93,7 @@ module.exports = async (from, email, subject, text, date, customer,information,p
 				
 				</tbody>
 			  </table>
-			  <p style="padding-top: 20px; color: gray;">Disclaimer: We will not be held responsible for any claims or losses not claimed within sixty days of notification.</p>
+			  <p style="padding-top: 20px; color: gray;">Disclaimer:We will not be held responsible for any pick ups not claimed after sixty(60) days of notification..</p>
 			  <p style="padding-top: 20px; color: gray;">Looking forward to doing more business with you.</p>
 			  <p style=" color: gray;">Yours truly,</p>
 			  <p style="color: gray;">MEND</p>
