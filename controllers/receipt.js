@@ -8,7 +8,7 @@ const sendEmail = require('../utils/sendEmail.js')
 
 const sendMail = async (req, res) => {
     try {
-      const { email, text, mail, date, customer,information,price,advanced,medium } = req.body;
+      const { email, text, mail, date, customer,sewing,alteration,price,advanced,medium } = req.body;
   
       // Check if the user already exists
       let user = await Receipt.findOne({ email: req.body.email });
@@ -21,7 +21,7 @@ const sendMail = async (req, res) => {
     //   const hashedPassword = await bcrypt.hashSync(password, salt);
   
       // Create a new user
-      user = new Receipt({ email: req.body.email,date, text, customer,information,price,advanced,medium});
+      user = new Receipt({ email: req.body.email,date, text, customer,sewing,alteration,price,advanced,medium});
   
       // Save the user
       await user.save();
@@ -38,7 +38,7 @@ const sendMail = async (req, res) => {
       // Send receipt email
       //const link = `http://localhost:5000/api/users/confirm/${token.token}`;
       await sendEmail( "henry.eyo2@gmail.com", user.email, "Payment Receipt",
-      "Heres you receipt!",  user.date, user.customer, user.information,user.price, user.advanced,
+      "Heres you receipt!",  user.date, user.customer, user.sewing,user.alteration,user.price, user.advanced,
       user.medium,
       
       

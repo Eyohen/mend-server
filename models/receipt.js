@@ -26,7 +26,11 @@ const ReceiptSchema = new mongoose.Schema({
         type:String,
         required:false
     },
-    information:{
+    sewing:{
+        type:String,
+        required:false
+    },
+    alteration:{
         type:String,
         required:false
     },
