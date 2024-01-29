@@ -3,7 +3,7 @@ const dotenv=require('dotenv')
 
 
 
-module.exports = async (from, email, subject, text, date, customer,sewing, alteration, price, advanced, medium,) => {
+module.exports = async (from, email, subject, text, date, customer,sewing, alteration, price, advanced, medium,pickup) => {
 	try {
 		const transporter = nodemailer.createTransport({
 			host: process.env.EMAIL_HOST,
@@ -68,7 +68,7 @@ module.exports = async (from, email, subject, text, date, customer,sewing, alter
 			  <h1>Hi!</h1>
 			  <h3 style="font-size: 20px; font-weight: 100; color: gray;">Your receipt has arrived!</h3>
 			
-			  <h3 style="font-size: 20px; font-weight: 100; color: gray;">Date:${new Date(date).toDateString()}</h3>
+			  <h3 style="font-size: 20px; font-weight: 100; color: gray;">Date : ${new Date(date).toDateString()}</h3>
 			
 			
 			  <table>
@@ -94,7 +94,9 @@ module.exports = async (from, email, subject, text, date, customer,sewing, alter
 				
 				</tbody>
 			  </table>
-			  <p style="padding-top: 20px; color: gray;">Disclaimer:We will not be held responsible for any pick ups not claimed after sixty(60) days of notification..</p>
+
+			  <p style="padding-top: 20px; color: gray;">Pick-up date : ${new Date(pickup).toDateString()}</p>
+			  <p style="padding-top: 20px; color: gray;">Disclaimer:We will not be held responsible for any pick ups not claimed after sixty(60) days of notification.</p>
 			  <p style="padding-top: 20px; color: gray;">Looking forward to doing more business with you.</p>
 			  <p style=" color: gray;">Yours truly,</p>
 			  <p style="color: gray;">MEND</p>

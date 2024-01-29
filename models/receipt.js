@@ -41,6 +41,10 @@ const ReceiptSchema = new mongoose.Schema({
     date:{
         type:String,
         required:false
+    },
+    pickup:{
+        type:Date,
+        required:false
     }
    
    
