@@ -32,6 +32,18 @@ const TaskSchema = new mongoose.Schema({
         enum:['high','medium','low'],
         default:'low'
       },
+    customerphone:{
+        type:Number
+    },
+    pickupstatus:{
+        type:String,
+        enum:['not-ready','ready','picked-up'],
+        default:'not-ready',
+    },
+    tailor:{
+        type:String,
+        
+    }
 
 },{timestamps:true})
 
