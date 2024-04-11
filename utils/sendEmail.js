@@ -3,7 +3,7 @@ const dotenv=require('dotenv')
 
 
 
-module.exports = async (from, email, subject, text, date, customer,sewing, alteration, price, advanced, medium,pickup) => {
+module.exports = async (from, email, subject, text, date, customer,sewing, alteration, price, advanced, medium,pickup,picktime) => {
 	try {
 		const transporter = nodemailer.createTransport({
 			host: process.env.EMAIL_HOST,
@@ -95,7 +95,7 @@ module.exports = async (from, email, subject, text, date, customer,sewing, alter
 				</tbody>
 			  </table>
 
-			  <p style="padding-top: 20px; color: gray; font-size: 20px; font-weight: 100;">Pick-up date : ${new Date(pickup).toDateString()}</p>
+			  <p style="padding-top: 20px; color: gray; font-size: 20px; font-weight: 100;">Pick-up date : ${new Date(pickup).toDateString()}, ${picktime}</p>
 			  <p style="padding-top: 20px; color: gray;">Disclaimer:We will not be held responsible for any pick ups not claimed after sixty(60) days of notification.</p>
 			  <p style="padding-top: 20px; color: gray;">Looking forward to doing more business with you.</p>
 			  <p style=" color: gray;">Yours truly,</p>

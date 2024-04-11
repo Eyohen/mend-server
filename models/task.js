@@ -43,6 +43,10 @@ const TaskSchema = new mongoose.Schema({
     tailor:{
         type:String,
         
+    },
+    picktime:{
+        type:String,
+        
     }
 
 },{timestamps:true})
