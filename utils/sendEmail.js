@@ -79,7 +79,7 @@ module.exports = async (from, email, subject, text, date, customer,sewing, alter
 					<th>Alteration</th>
 					<th>Price(₦)</th>
 					<th>Advanced(₦)</th>
-					<th>Payment Medium</th>
+					<th>Payment Mode</th>
 				  </tr>
 				</thead>
 				<tbody>
